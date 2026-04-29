@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency SOS App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="phone-wrap">
+    <div class="phone">
+
+      <!-- HOME SCREEN -->
+      <div class="screen home-screen active" id="screen-home">
+        <div class="home-title">Emergency SOS</div>
+        <div class="search-bar">
+          <svg width="16" height="16" fill="none" stroke="#aaa" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <span>Search emergency services...</span>
+        </div>
+        <div class="grid-2">
+          <div class="grid-card card-pink" onclick="go('hospitals')">
+            <div class="icon">🏥</div>
+            <div class="label">Nearby Hospitals</div>
+          </div>
+          <div class="grid-card card-blue" onclick="go('emergency')">
+            <div class="icon">📞</div>
+            <div class="label">Emergency Numbers</div>
+          </div>
+          <div class="grid-card card-teal" onclick="go('medhistory')">
+            <div class="icon">📋</div>
+            <div class="label">Medical History</div>
+          </div>
+          <div class="grid-card card-purple" onclick="go('firstaid')">
+            <div class="icon">🩹</div>
+            <div class="label">First Aid</div>
+          </div>
+        </div>
+        <div class="sos-wrap">
+          <button class="sos-btn" onclick="sosAlert()">SOS</button>
+        </div>
+      </div>
+
+      <!-- FIRST AID SCREEN -->
+      <div class="screen firstaid-screen" id="screen-firstaid">
+        <div class="page-header">
+          <button class="back-btn" onclick="go('home')">←</button>
+          <div class="page-title purple">First Aid Guides</div>
+        </div>
+        <div class="page-content">
+          <div class="info-banner">
+            <span class="bi">🩺</span>
+            <div>
+              <p><strong>Quick reference guides for common emergencies</strong></p>
+              <p>Tap any guide to learn more</p>
+            </div>
+          </div>
+          <div class="aid-card aid-red">
+            <div class="ai">🩹</div>
+            <div class="at"><h4>Cuts and Wounds</h4><p>How to treat minor cuts, scrapes, and bleeding</p></div>
+            <div class="arr">›</div>
+          </div>
+          <div class="aid-card aid-orange">
+            <div class="ai">🔥</div>
+            <div class="at"><h4>Burns</h4><p>Treatment for minor and major burns</p></div>
+            <div class="arr">›</div>
+          </div>
+          <div class="aid-card aid-blue">
+            <div class="ai">🫁</div>
+            <div class="at"><h4>Choking</h4><p>Heimlich maneuver and choking first aid</p></div>
+            <div class="arr">›</div>
+          </div>
+          <div class="aid-card aid-violet">
+            <div class="ai">🦴</div>
+            <div class="at"><h4>Fractures and Sprains</h4><p>Immobilization and initial care for bone injuries</p></div>
+            <div class="arr">›</div>
+          </div>
+          <div class="aid-card aid-rose">
+            <div class="ai">❤️</div>
+            <div class="at"><h4>Heart Attack</h4><p>Recognizing symptoms and emergency response</p></div>
+            <div class="arr">›</div>
+          </div>
+          <div class="aid-card aid-gray">
+            <div class="ai">🧠</div>
+            <div class="at"><h4>Stroke</h4><p>FAST method: Face, Arms, Speech, Time</p></div>
+            <div class="arr">›</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEDICAL HISTORY SCREEN -->
+      <div class="screen medhistory-screen" id="screen-medhistory">
+        <div class="page-header">
+          <button class="back-btn" onclick="go('home')">←</button>
+          <div class="page-title teal">Medical History</div>
+        </div>
+        <div class="page-content">
+          <div class="profile-card">
+            <div class="profile-top">
+              <div class="avatar">👤</div>
+              <div><h3>Rajesh Kumar</h3><p>Age: 42 years</p></div>
+            </div>
+            <div class="vitals">
+              <div class="vital"><div class="vl">Blood Type</div><div class="vv">O+</div></div>
+              <div class="vital"><div class="vl">Height</div><div class="vv">5'8"</div></div>
+              <div class="vital"><div class="vl">Weight</div><div class="vv">75 kg</div></div>
+            </div>
+          </div>
+          <div class="section-title">⚠️ Allergies</div>
+          <div class="allergy-row"><span>Penicillin</span><span class="badge badge-high">High</span></div>
+          <div class="allergy-row"><span>Peanuts</span><span class="badge badge-mod">Moderate</span></div>
+          <div class="section-title">💊 Current Medications</div>
+          <div class="med-card">
+            <div class="md"><h4>Metformin</h4><p>Twice daily</p><p>For: Diabetes Type 2</p></div>
+            <div class="med-dose">500mg</div>
+          </div>
+          <div class="med-card">
+            <div class="md"><h4>Lisinopril</h4><p>Once daily</p><p>For: High Blood Pressure</p></div>
+            <div class="med-dose">10mg</div>
+          </div>
+          <div class="section-title">📈 Medical Conditions</div>
+          <div class="allergy-row"><span>Diabetes Type 2</span><span class="badge badge-mod">Managed</span></div>
+          <div class="allergy-row"><span>High Blood Pressure</span><span class="badge badge-mod">Managed</span></div>
+          <div class="section-title">📞 Emergency Conatct</div>
+          <div class="contact-card">
+            <div class="cc-top">
+              <h4 class="emergency-name">Mom</h4>
+            </div>
+            <div class="cc-bottom">
+              <div class="phone-num">📞 <span class="emergency-number">9619387706</span></div>
+              <button class="call-btn" onclick="callEmergencyContact()">Call</button>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-top">
+              <h4 class="emergency-name">Dad</h4>
+            </div>
+            <div class="cc-bottom">
+              <div class="phone-num">📞 <span class="emergency-number">9884943337</span></div>
+              <button class="call-btn" onclick="callEmergencyContact()">Call</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- EMERGENCY CONTACTS SCREEN -->
+      <div class="screen emergency-screen" id="screen-emergency">
+        <div class="page-header">
+          <button class="back-btn" onclick="go('home')">←</button>
+          <div class="page-title pink">Emergency Contacts</div>
+        </div>
+        <div class="page-content">
+          <div class="alert-banner">
+            <span>⚠️</span>
+            <p>In life-threatening emergencies, always call 112 first</p>
+          </div>
+          <div class="contact-card">
+            <div class="cc-top"><h4>National Emergency Number</h4><span class="badge-crit">Critical</span></div>
+            <p class="cc-sub">Universal emergency (Police, Fire, Ambulance)</p>
+            <div class="cc-bottom"><div class="phone-num">📞 112</div><button class="call-btn" onclick="callNumber('112')">Call Now</button></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-top"><h4>Police</h4><span class="badge-crit">Critical</span></div>
+            <p class="cc-sub">Police emergency services</p>
+            <div class="cc-bottom"><div class="phone-num">📞 100</div><button class="call-btn" onclick="callNumber('100')">Call Now</button></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-top"><h4>Fire</h4><span class="badge-crit">Critical</span></div>
+            <p class="cc-sub">Fire emergency services</p>
+            <div class="cc-bottom"><div class="phone-num">📞 101</div><button class="call-btn" onclick="callNumber('101')">Call Now</button></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-top"><h4>Ambulance</h4><span class="badge-crit">Critical</span></div>
+            <p class="cc-sub">Medical emergency and ambulance</p>
+            <div class="cc-bottom"><div class="phone-num">📞 102</div><button class="call-btn" onclick="callNumber('102')">Call Now</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEARBY HOSPITALS SCREEN -->
+      <div class="screen hospitals-screen" id="screen-hospitals">
+        <div class="page-header">
+          <button class="back-btn" onclick="go('home')">←</button>
+          <div class="page-title rose">Nearby Hospitals</div>
+        </div>
+        <div class="page-content">
+          <div class="loc-card">
+            <div class="loc-icon">📍</div>
+            <div>
+              <div style="font-size:12px;color:#aaa;">Your Location</div>
+              <div style="font-weight:600;font-size:15px;">Current Position</div>
+            </div>
+          </div>
+          <div class="hosp-card">
+            <div class="hosp-top"><h4>Apollo Hospital</h4><span class="hosp-dist">0.8 km</span></div>
+            <div class="hosp-addr">📍 Apollo Hospital</div>
+            <div class="hosp-actions">
+              <button class="btn-dir" onclick="getDirections('Apollo Hospital')">Get Directions</button>
+              <button class="btn-call-out" onclick="callNumber('1800-111-111')">Call Now</button>
+            </div>
+          </div>
+          <div class="hosp-card">
+            <div class="hosp-top"><h4>Global Hospital</h4><span class="hosp-dist">1.2 km</span></div>
+            <div class="hosp-addr">📍 Global Hospital</div>
+            <div class="hosp-actions">
+              <button class="btn-dir" onclick="getDirections('Global Hospital')">Get Directions</button>
+              <button class="btn-call-out" onclick="callNumber('1800-222-222')">Call Now</button>
+            </div>
+          </div>
+          <div class="hosp-card">
+            <div class="hosp-top"><h4>OneHealth Super Speciality Hospital</h4><span class="hosp-dist">1.5 km</span></div>
+            <div class="hosp-addr">📍 OneHealth Super Speciality Hospital</div>
+            <div class="hosp-actions">
+              <button class="btn-dir" onclick="getDirections('OneHealth Super Speciality Hospital')">Get Directions</button>
+              <button class="btn-call-out" onclick="callNumber('1800-333-333')">Call Now</button>
+            </div>
+          </div>
+          <div class="hosp-card">
+            <div class="hosp-top"><h4>SRM Global Hospital</h4><span class="hosp-dist">2.1 km</span></div>
+            <div class="hosp-addr">📍 Global Hospital</div>
+            <div class="hosp-actions">
+              <button class="btn-dir" onclick="getDirections('Global Hospital')">Get Directions</button>
+              <button class="btn-call-out" onclick="callNumber('1800-444-444')">Call Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.phone -->
+  </div><!-- /.phone-wrap -->
+
+  <script src="js/app.js"></script>
+
+
+</body>
+</html>
