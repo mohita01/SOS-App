@@ -44,6 +44,33 @@ The app uses peer-to-peer communication to send SOS messages without internet:
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home Screen
+![Home Screen](screenshotssos/homepage.jpeg)
+
+---
+
+### 📞 Emergency Contacts
+![Emergency Contacts](screenshotssos/emergencycontacts.jpeg)
+
+---
+
+### 📋 Medical History
+![Medical History](screenshotssos/medicalhistory.jpeg)
+
+---
+
+### 🏥 Nearby Hospitals
+![Nearby Hospitals](screenshotssos/nearbyhospital.jpeg)
+
+---
+
+### 🩹 First Aid Section
+![First Aid](screenshotssos/firstaid.jpeg)
+
+---
+
 ## ⚠️ Limitations
 
 - Mesh works only within short range (~100–200m per device)
