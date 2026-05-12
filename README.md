@@ -42,34 +42,30 @@ The app uses peer-to-peer communication to send SOS messages without internet:
 - Messages hop between nearby devices  
 - Ensures communication even in no-network zones
 
----
-
 ## 📸 Screenshots
 
 ### 🏠 Home Screen
-![Home Screen](screenshotssos/homepage.jpeg)
+<img src="screenshotssos/homepage.jpeg" width="250"/>
 
 ---
 
 ### 📞 Emergency Contacts
-![Emergency Contacts](screenshotssos/emergencycontacts.jpeg)
+<img src="screenshotssos/emergencycontacts.jpeg" width="250"/>
 
 ---
 
 ### 📋 Medical History
-![Medical History](screenshotssos/medicalhistory.jpeg)
+<img src="screenshotssos/medicalhistory.jpeg" width="250"/>
 
 ---
 
 ### 🏥 Nearby Hospitals
-![Nearby Hospitals](screenshotssos/nearbyhospital.jpeg)
+<img src="screenshotssos/nearbyhospital.jpeg" width="250"/>
 
 ---
 
 ### 🩹 First Aid Section
-![First Aid](screenshotssos/firstaid.jpeg)
-
----
+<img src="screenshotssos/firstaid.jpeg" width="250"/>
 
 ## ⚠️ Limitations
 
